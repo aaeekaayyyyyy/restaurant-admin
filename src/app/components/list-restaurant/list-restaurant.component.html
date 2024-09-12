@@ -1,0 +1,18 @@
+<button routerLink="/restaurants/add">Add Restaurant</button>
+
+<button routerLink="/restaurants/delete">Delete Restaurant</button>
+<div class="container mt-3">
+  <h3>Restaurant List</h3>
+  <input
+    [(ngModel)]="searchQuery"
+    (input)="filterRestaurants()"
+    class="form-control mb-3"
+    placeholder="Search Restaurants"
+  />
+
+  <ul class="list-group">
+    <li *ngFor="let restaurant of filterRestaurants()" class="list-group-item">
+      {{ restaurant.name }} - {{ restaurant.location }}
+    </li>
+  </ul>
+</div>
